@@ -22,10 +22,13 @@
              <pre>Empty items will not be counted!</pre>
          </div>
          <div class="form-group">
-             <button class="btn btn-default" ng-click="checkIfTooMuch();">Check If Too Much</button>
+             <button class="btn btn-primary" ng-click="checkIfTooMuch();">Check If Too Much</button>
          </div>
          <div class="form-group message">
-           {{msg}}
+             <div style="color : {{color}}">
+                 {{msg}}
+             </div>
+
          </div>
    </div>
 

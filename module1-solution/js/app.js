@@ -14,21 +14,22 @@
             $scope.msg = "";
             $scope.data = "";
             $scope.foodTokens = "";
+            $scope.color = "inherit";
             $scope.checkIfTooMuch = function () {
 
-                $scope.foodTokens = $scope.data.split(",").filter(function(e){
-                    return e!=""; //empty spaces will not count
-                }).length;
+                $scope.foodTokens = $scope.data.split(",").map(function(str){return str.trim()}).filter(function(e){return e!="";}).length;
 
-                $scope.msg = ( $scope.foodTokens == 0 ) ? "Please enter data first" :
-                    ( $scope.foodTokens <= 3 ) ? "Enjoy!" : "Too Much" ;
-
-
-
+                if($scope.foodTokens == 0){
+                    $scope.msg = "Please enter data first";
+                    $scope.color = "red";
+                }
+                else if($scope.foodTokens <= 3){
+                    $scope.msg = "Enjoy!";
+                    $scope.color = "green";
+                } else {
+                    $scope.msg = "Too Much";
+                    $scope.color = "green";
+                }
             }
         }
-
-
-
-
 })();
