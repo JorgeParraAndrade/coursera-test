@@ -1,0 +1,7 @@
+<div class="row">
+    <div class="col-sm-3 fixbox" ng-repeat="item in flist.foundItems">
+        <h3>({{ item.short_name }}) {{ item.name }}</h3><br>
+        <p class="scrollc">{{ item.description }}</p>
+        <button class="btn btn-primary" ng-click="flist.onRemove({indice: $index});">REMOVE</button>
+    </div>
+</div>
