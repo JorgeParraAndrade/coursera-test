@@ -1,0 +1,83 @@
+<div class="container">
+
+<h1>Newsletter</h1>
+  <div class="col-sm-6">
+
+    <form name='regForm' novalidate>
+      <input type="text" name="firstname" placeholder="First name" class="form-control"
+             ng-model="reg.user.firstname"
+             required
+             minlength="2"
+             ng-maxlength="20">
+      <span
+              ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$error.required) && regForm.firstname.$touched">
+        Name should be at least 2 characters long
+      </span>
+      <span ng-if="regForm.firstname.$error.maxlength && regForm.firstname.$touched">
+        Name shouldn't not be longer than 20 characters
+      </span>
+      <br>
+
+      <input type="text" name="lastname" placeholder="Last name" class="form-control"
+             ng-model="reg.user.lastname"
+             required
+             minlength="2"
+             ng-maxlength="20">
+      <span
+              ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$error.required) && regForm.lastname.$touched">
+          Last name should be at least 2 characters long
+        </span>
+      <span ng-if="regForm.lastname.$error.maxlength && regForm.lastname.$touched">
+          Last name shouldn't be longer than 20 characters
+        </span>
+      <br>
+
+      <input type="email" name="email" placeholder="Email" class="form-control"
+             ng-model="reg.user.email"
+             required>
+      <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+      <br>
+
+      <input type="text" name="phone" placeholder="Phone ###-###-####" class="form-control"
+             ng-model="reg.user.phone"
+             required
+             pattern="(\d{3})-(\d{3})-(\d{4})">
+      <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
+        </span>
+      <br>
+
+      <input type="text" name="favdish" placeholder="Your favorite dish" class="form-control"
+             ng-model="reg.user.favdish"><span ng-show="reg.favInvalid">No such menu number exists</span>
+      <br>
+
+      <button ng-disabled="regForm.$invalid" ng-click="reg.submit()" class="btn btn-primary">Submit</button>
+
+    </form>
+  </div>
+<div class="col-sm-6">
+  <table class="table table-bordered" ng-show="reg.registered">
+    <tr>
+      <th colspan="2"><h2>Your information has been saved.</h2></th>
+    </tr>
+    <tr>
+      <td>First name</td>
+      <td>{{ reg.user.firstname }}</td>
+    </tr>
+    <tr>
+      <td>Last name</td>
+      <td>{{ reg.user.lastname }}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{ reg.user.email }}</td>
+    </tr>
+    <tr>
+      <td>Favorite dish</td>
+      <td>{{ reg.user.favdish }}</td>
+    </tr>
+  </table>
+</div>
+</div>
