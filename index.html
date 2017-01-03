@@ -1,145 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>David Chu's China Bistro</title>
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/restaurant.css">
-    <link rel="stylesheet" href="css/common.css">
-  </head>
-  <body ng-app="restaurant" ng-strict-di>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Fixed position loading indicator -->
-    <loading class="loading-indicator"></loading>
+  <!-- Style sheets -->
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/styles.css">
 
-    <header>
-      <nav id="header-nav" class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <a href="index.html" class="pull-left visible-md visible-lg">
-              <div id="logo-img" alt="Logo image"></div>
-            </a>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700" rel="stylesheet">
 
-            <div class="navbar-brand">
-              <a href="index.html"><h1>David Chu's China Bistro</h1></a>
-              <p>
-              <img src="images/star-k-logo.png" alt="Kosher certification">
-              <span>Kosher Certified</span>
-              </p>
-            </div>
+  <title>Piera Tours</title>
+</head>
+<body>
 
-            <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-
-          <div id="collapsable-nav" class="collapse navbar-collapse">
-            <ul id="nav-list" class="nav navbar-nav navbar-right">
-              <li id="navHomeButton" class="visible-xs">
-                <a href="index.html">
-                  <span class="glyphicon glyphicon-home"></span> Home</a>
-              </li>
-              <li id="navMenuButton" ui-sref-active="active">
-                <a ui-sref="public.menu">
-                  <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
-              </li>
-              <li>
-                <a ui-sref="public.myinfo">
-                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
-              </li>
-              <li>
-                <a ui-sref="public.signup">
-                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
-              </li>
-              <li id="phone" class="hidden-xs">
-                <a href="tel:410-602-5008">
-                  <span>410-602-5008</span></a><div>* We Deliver</div>
-              </li>
-            </ul><!-- #nav-list -->
-          </div><!-- .collapse .navbar-collapse -->
-        </div><!-- .container -->
-      </nav><!-- #header-nav -->
-    </header>
-
-    <div id="call-btn" class="visible-xs">
-      <a class="btn" href="tel:410-602-5008">
-        <span class="glyphicon glyphicon-earphone"></span>
-        410-602-5008
-      </a>
+  <div class="col-sm-12 top-bar hidden-xs hidden-sm">
+    <div class="container">
+      <img src="img/mail-w.png" alt=""><a href="mailto:info@pieratours.com">info@pieratours.com</a>
+      <img src="img/phone-w.png" alt=""><a href="tel:582127627872">+58 212 762 7872</a>
+      <span>Sigue nuestras redes sociales</span>
+      <a href="#" class="top-ico" ><i class="fa fa-facebook"></i></a>
+      <a href="#" class="top-ico" ><i class="fa fa-twitter"></i></a>
+      <a href="#" class="top-ico" ><i class="fa fa-instagram"></i></a>
     </div>
-    <div id="xs-deliver" class="text-center visible-xs">* We Deliver</div>
+  </div>
 
-    <ui-view>
-      <div class="text-center initial-loading">
-        <h2>Loading Site...</h2>
-      </div>
-    </ui-view>
 
-    <footer class="panel-footer">
-      <div class="container">
-        <div class="row">
-          <section id="hours" class="col-sm-4">
-            <span>Hours:</span><br>
-            Sun-Thurs: 11:15am - 10:00pm<br>
-            Fri: 11:15am - 2:30pm<br>
-            Saturday Closed
-            <hr class="visible-xs">
-          </section>
-          <section id="address" class="col-sm-4">
-            <span>Address:</span><br>
-            7105 Reisterstown Road<br>
-            Baltimore, MD 21215
-            <p>* Delivery area within 3-4 miles, with minimum order of $20 plus $3 charge for all deliveries.</p>
-            <hr class="visible-xs">
-          </section>
-          <section id="testimonials" class="col-sm-4">
-            <p>"The best Chinese restaurant I've been to! And that's saying a lot, since I've been to many!"</p>
-            <p>"Amazing food! Great service! Couldn't ask for more! I'll be back again and again!"</p>
-          </section>
+
+  <!-- header slider desktop -->
+<div id="main-page-slider" class="carousel slide hidden-xs" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#main-page-slider" data-slide-to="0" class="active"></li>
+    <li data-target="#main-page-slider" data-slide-to="1"></li>
+    <li data-target="#main-page-slider" data-slide-to="2"></li>
+  </ol>
+
+
+<div class="slider-overlay">
+  <div class="secondary-header container">
+    <ul class="slide-menu">
+      <li class="menu-item hidden-xs hidden-sm"><a href=""><img src="img/logo-big.png" alt=""></a></li>
+      <li class="menu-item text-item"><a href="">Destinos</a></li>
+      <li class="menu-item text-item"><a href="">Promociones</a></li>
+      <li class="menu-item text-item"><a href="">Servicios</a></li>
+      <li class="menu-item text-item"><a href="">Contacto</a></li>
+    </ul>
+    <div class="clearfix"></div>
+    <h2 style="margin-top: 56px;">¡NO TE LO PUEDES PERDER!</h2>
+    <p>Planifica ya las vacaciones de tu vida con la ayuda <br>de Piera Tours, con todo incluido.</p>
+    <a href=""><button class="btn btn-header">Contáctanos</button></a>
+  </div>
+</div>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="img/slide1.jpg" class="img-responsive" alt="img1">
+    </div>
+    <div class="item">
+      <img src="img/slide2.jpg" class="img-responsive" alt="img2">
+    </div>
+    <div class="item">
+      <img src="img/slide3.jpg" class="img-responsive" alt="img3">
+    </div>
+  </div>
+</div>
+
+<!-- Main menu -->
+<nav class="navbar navbar-default navbar-main">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.png" class="brand-img img-responsive" alt=""></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu">
+      <ul class="nav navbar-nav nav-links">
+        <li><a href="#">Destinos</a></li>
+        <li><a href="#">Promociones</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><img src="img/face-g.png" alt=""></a></li>
+        <li><a href="#"><img src="img/twitter-g.png" alt=""></a></li>
+        <li><a href="#"><img src="img/insta-g.png" alt=""></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<!-- Main menu -->
+<nav class="navbar navbar-default navbar-main navbar-fixed-top" id="menu-scroll-show" style="display:none;">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img src="img/logo.png" class="brand-img img-responsive" alt=""></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu">
+      <ul class="nav navbar-nav nav-links">
+        <li><a href="#">Destinos</a></li>
+        <li><a href="#">Promociones</a></li>
+        <li><a href="#">Servicios</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><img src="img/face-g.png" alt=""></a></li>
+        <li><a href="#"><img src="img/twitter-g.png" alt=""></a></li>
+        <li><a href="#"><img src="img/insta-g.png" alt=""></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+<!-- header slider desktop -->
+<div id="main-page-slider" class="carousel slide visible-xs" data-ride="carousel">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+  <li data-target="#main-page-slider" data-slide-to="0" class="active"></li>
+  <li data-target="#main-page-slider" data-slide-to="1"></li>
+  <li data-target="#main-page-slider" data-slide-to="2"></li>
+</ol>
+
+
+<div class="slider-overlay">
+<div class="secondary-header container">
+  <div class="clearfix"></div>
+  <h2 style="margin-top: 56px;">¡NO TE LO PUEDES PERDER!</h2>
+  <p>Planifica ya las vacaciones de tu vida con la ayuda <br>de Piera Tours, con todo incluido.</p>
+  <a href=""><button class="btn btn-header">Contáctanos</button></a>
+</div>
+</div>
+
+<!-- Wrapper for slides -->
+<div class="carousel-inner" role="listbox">
+  <div class="item active">
+    <img src="img/slide1cell.jpg" class="img-responsive" alt="img1">
+  </div>
+  <div class="item">
+    <img src="img/slide2cell.jpg" class="img-responsive" alt="img2">
+  </div>
+  <div class="item">
+    <img src="img/slide3cell.jpg" class="img-responsive" alt="img3">
+  </div>
+</div>
+</div>
+
+
+
+<!-- Main content area -->
+<div class="container">
+  <div class="row" style="margin-bottom: 98px;">
+
+    <section class="title-section">
+      <h1 class="main-h">comienza a planear tu viaje aquí</h1>
+      <h3 class="sub-h">Descubre nuestros destinos</h3>
+    </section>
+
+    <div class="row">
+
+      <div class="col-sm-12 no-padd">
+        <div id="home-box1" class="home-grid" style="background-image: url(img/des1.jpg);">
+          <div class="center-content">
+            <span>destino</span> <br> LOS ROQUES
+            <br><button class="btn btn-primary-clr">conoce más</button>
+          </div>
         </div>
-        <div class="text-center">
-          &copy; Copyright David Chu's China Bistro 2016 |
-          <a ui-sref="admin.auth">Admin</a></div>
       </div>
-    </footer>
 
-    <!-- Libs -->
-    <script src="lib/jquery-2.1.4.min.js"></script>
-    <script src="lib/bootstrap.min.js"></script>
-    <script src="lib/angular.min.js"></script>
-    <script src="lib/angular-ui-router.min.js"></script>
+    </div>
 
-    <!-- Main Restaurant Module -->
-    <script src="src/restaurant.module.js"></script>
+    <div class="row">
 
-    <!-- Common Module -->
-    <script src="src/common/common.module.js"></script>
-    <script src="src/common/loading/loading.component.js"></script>
-    <script src="src/common/loading/loading.interceptor.js"></script>
-    <script src="src/common/menu.service.js"></script>
+      <div class="col-sm-8 no-padd">
 
-    <!-- Public Module -->
-    <script src="src/public/public.module.js"></script>
-    <script src="src/public/public.routes.js"></script>
-    <script src="src/public/menu/menu.controller.js"></script>
-    <script src="src/public/menu-category/menu-category.component.js"></script>
-    <script src="src/public/menu-items/menu-items.controller.js"></script>
-    <script src="src/public/menu-item/menu-item.component.js"></script>
-    <script src="src/public/register/sign-up.controller.js"></script>
-    <script src="src/public/register/registration.service.js"></script>
-    <script src="src/public/register/my-info.controller.js"></script>
+        <div class="col-sm-12 no-padd grid-separator">
+          <div class="home-grid" id="home-box2" style="background-image: url(img/des2.jpg);">
+            <div class="center-content">
+              <span>destino</span> <br> LA TORTUGA
+              <br><button class="btn btn-primary-clr">conoce más</button>
+            </div>
+          </div>
+        </div>
 
-    <!-- ADMIN SITE -->
+        <div class="col-sm-12 no-padd grid-separator">
+          <div class="home-grid" id="home-box3" style="background-image: url(img/des4.jpg);">
+            <div class="center-content">
+              <span>destino</span> <br> RORAIMA
+              <br><button class="btn btn-primary-clr">conoce más</button>
+            </div>
+          </div>
+        </div>
 
-    <!--Application files -->
+      </div>
 
-  </body>
+      <div class="col-sm-4 no-padd">
 
+        <div class="col-sm-12 no-padd grid-separator">
+          <div class="home-grid" id="home-box4" style="background-image: url(img/des3.jpg);">
+            <div class="center-content">
+              <span>destino</span> <br> SALTO ÁNGEL
+              <br><button class="btn btn-primary-clr">conoce más</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-4 no-padd grid-separator">
+        <div class="home-grid" id="home-box5" style="background-image: url(img/des5.jpg);">
+          <div class="center-content">
+            <span>destino</span> <br> catatumbo
+            <br><button class="btn btn-primary-clr">conoce más</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-sm-8 no-padd grid-separator">
+        <div class="home-grid" id="home-box6" style="background-image: url(img/des6.jpg);">
+          <div class="center-content">
+            <span>canaima</span> <br> TEPUY AUTANA
+            <br><button class="btn btn-primary-clr">conoce más</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<div class="container-fluid">
+  <section class="gray-sec">
+    <div class="container">
+      <div class="row text-center" style="padding-top: 25px;">
+        <section class="title-section">
+          <h1 class="main-h">CONOCE NUESTRAS PROMOCIONES ACTUALES</h1>
+          <h3 class="sub-h">Lorem ipsum dolor sit.</h3>
+        </section>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header" style="background-image: url(img/trip1.jpg)">
+              <button class="btn btn-secondary">reservar</button>
+            </div>
+            <p>
+              Guayaquil, Ecuador
+              <br>
+              <span>A partir de</span>
+            </p>
+            <span class="price">Bs. 366.010,77</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header" style="background-image: url(img/trip2.jpg)">
+              <button class="btn btn-secondary">reservar</button>
+            </div>
+            <p>
+              Bogotá, Colombia
+              <br>
+              <span>A partir de</span>
+            </p>
+            <span class="price">Bs. 211.252,88</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header" style="background-image: url(img/trip3.jpg)">
+              <button class="btn btn-secondary">reservar</button>
+            </div>
+            <p>
+              Buenos Aires, Argentina
+              <br>
+              <span>A partir de</span>
+            </p>
+            <span class="price">Bs. 437.445,45</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header" style="background-image: url(img/trip4.jpg)">
+              <button class="btn btn-secondary">reservar</button>
+            </div>
+            <p>
+              La Habana, Cuba
+              <br>
+              <span>A partir de</span>
+            </p>
+            <span class="price">Bs. 315.208,85</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header" style="background-image: url(img/trip5.jpg)">
+              <button class="btn btn-secondary">reservar</button>
+            </div>
+            <p>
+              Madrid, España
+              <br>
+              <span>A partir de</span>
+            </p>
+            <span class="price">Bs. 775.583,63</span>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header" style="background-image: url(img/trip6.jpg)">
+              <button class="btn btn-secondary">reservar</button>
+            </div>
+            <p>
+              Ciudad de Panamá, Panamá
+              <br>
+              <span>A partir de</span>
+            </p>
+            <span class="price">Bs. 161.540,15</span>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="center-text" style="margin: 21px 0 103px;">
+          <button class="btn btn-primary">mostrar más</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="solid-color">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>NUESTROS SERVICIOS</h1>
+        <div class="card-container" style="margin-bottom: 201px;">
+          <div class="mini-card">
+            <img src="img/icon1.png" alt="" class="img-responsive"/>
+            boletos
+            <br>
+            aéreos
+          </div>
+          <div class="mini-card">
+            <img src="img/icon2.png" alt="" class="img-responsive"/>
+            reservación
+            <br>
+            de hoteles
+          </div>
+          <div class="mini-card">
+            <img src="img/icon3.png" alt="" class="img-responsive"/>
+            asistencia del
+            <br>
+            staff 24hrs
+          </div>
+          <div class="mini-card">
+            <img src="img/icon4.png" alt="" class="img-responsive"/>
+            alquiler de
+            <br>
+            vehículo
+          </div>
+        </div>
+        <div class="card-container2">
+          <div class="mini-card">
+            <img src="img/icon5.png" alt="" class="img-responsive"/>
+            Alquiler vip de
+            <br>
+            lanchas y yates
+          </div>
+          <div class="mini-card">
+            <img src="img/icon6.png" alt="" class="img-responsive"/>
+            venta de
+            <br>
+            excursiones
+          </div>
+          <div class="mini-card">
+            <img src="img/icon7.png" alt="" class="img-responsive"/>
+            transporte de
+            <br>
+            pasajeros en bus
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+  <section class="solid-color" style="background-image:url('img/background-1.jpg')">
+
+    <div class="container">
+      <div class="row">
+        <h1>NUESTRAS OFICINAS COMERCIALES</h1>
+        <div class="col-sm-3">
+          <div class="card-2">
+            <p>
+              CARACAS
+              <br>
+              <span>Av. Fco Solano con Calle Los Mangos, Torre Los Mangos, Piso 1, Ofc 1-A.</span>
+            </p>
+            <p class="phone"><img src="img/phone-g.png" alt=""><span>+58 212-7634246</span></p>
+            <button class="btn btn-secondary">ver en el mapa</button>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card-2">
+            <p>
+              Paraguaná
+              <br>
+              <span>Prolongación Av. Bolívar C.C Costa de Paraguaná Local 7, B-1 y C-1</span>
+            </p>
+            <p class="phone"><img src="img/phone-g.png" alt=""><span>+58 123-123-1234</span></p>
+            <button class="btn btn-secondary">ver en el mapa</button>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card-2">
+            <p>
+              Maracaibo
+              <br>
+              <span>Esq. Calle 61 con Av. 8B C.C. El Pino (Morpez) Nivel 2, Of. 2-8, Sector Zapara.</span>
+            </p>
+            <p class="phone"><img src="img/phone-g.png" alt=""><span>+58 261-7421493</span></p>
+            <button class="btn btn-secondary">ver en el mapa</button>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card-2">
+            <p>
+              Punto fijo
+              <br>
+              <span>Avenida Ollarvides con Calle Dabajuro, Centro Comercial La Orquídea, Local 6</span>
+            </p>
+            <p class="phone"><img src="img/phone-g.png" alt=""><span>+58 269-2442846</span></p>
+            <button class="btn btn-secondary">ver en el mapa</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section class="gray-sec pre-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 side-bar barra">
+        <h3>PIERA TOURS</h3>
+        <span>¿Quiénes somos?</span>
+        <p>Somos una Tour Operadora moderna radicada en Venezuela, con representación en Cuba, Curaçao y Aruba, con características vanguardistas para desarrollar toda la capacidad de conocer los gustos de los usuarios y así lograr satisfacerlos, maximizando las potencialidades de los productos y servicios turísticos que ofrecemos.</p>
+      </div>
+      <div class="col-sm-4 side-bar" style="margin-left: 50px; width: 670px;">
+        <h3>NUESTROS ALIADOS</h3>
+
+        <div class="img-container">
+          <a href="#"><img src="img/spon1.jpg" alt="aliados"></a>
+          <a href="#"><img src="img/spon2.jpg" alt="aliados"></a>
+          <a href="#"><img src="img/spon3.jpg" alt="aliados"></a>
+          <a href="#"><img src="img/spon4.jpg" alt="aliados"></a>
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="footer" class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        <img src="img/logo-w.png" class="img-responsive" alt="">
+      </div>
+      <div class="col-sm-9">
+        <div class="info">
+          <p><img src="img/mail-g.png" alt=""> <a href="mailto:info@pieratours.com">info@pieratours.com</a> &nbsp; <img src="img/phone-g2.png" alt=""> <a href="tel:+582127627872">+58 212 762 7872</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 copyright">
+        <span>Copyright 2016 © Piera Tours c.a. | RIF J-405562617</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+</body>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </html>
