@@ -82,8 +82,6 @@ body{
   padding: 0 13px;
 }
 
-
-
 .input-group {
   display: flex;
   justify-content: center;
@@ -410,6 +408,13 @@ a.navbar-brand {
         opacity: 1;
         width: 200px;
       }
+      button.btn-secondary{
+        &:hover{
+          color: white;
+          background-color: $rosa;
+          border: 2px solid $rosa;
+        }
+      }
     }
     button.btn-primary{
       margin: 83px 82px;
@@ -433,6 +438,15 @@ a.navbar-brand {
     color: $rosa;
   }
 
+}
+
+.d-header{
+  h3{
+    font-size: 30px;
+  }
+  p{
+    font-size: 16px;
+  }
 }
 
 .card-2{
@@ -523,8 +537,12 @@ a.navbar-brand {
 }
 
 .home-grid {
-  background-size: cover;
+  @include transition(all 1s ease);
+  background-size: 100%;
   background-position: center;
+  &:hover{
+    background-size: 120%;
+  }
 }
 
 .main-h{
@@ -701,4 +719,146 @@ h3.calendar-title {
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+#main-page-slider-mobile {
+  width: 100%;
+  height: 100%;
+}
+.margin-md {
+  margin-bottom: 98px;
+}
+.margin-md-bottom {
+  margin-bottom: 201px;
+}
+@media screen and (max-width: 440px) {
+  .home-grid{
+    background-size: cover;
+    &:hover{
+      background-size: cover;
+    }
+  }
+  .homeresp{
+    width: 100%;
+  }
+  #home-box1 {
+    width: 100% !important;
+    height: 35vh;
+  }
+  #home-box2 {
+    width: 100% !important;
+    height: 35vh;
+  }
+  #home-box3 {
+    width: 100% !important;
+    height: 35vh;
+  }
+  #home-box4 {
+    width: 100% !important;
+    height: 35vh;
+  }
+  .navbar {
+    margin-bottom: 0 !important;
+  }
+  .navbar-main {
+    width: 100%;
+  }
+  .navbar-brand {
+    margin-left: 15px;
+  }
+  .navbar-header {
+    margin-top: 8px;
+  }
+  .brand-img {
+    max-height: 8vh;
+  }
+  #main-menu {
+    z-index: 9999;
+  }
+  .img-container-bg {
+    background-size: cover;
+    background-color: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 150%;
+  }
+  .secondary-header {
+    p {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  }
+  .main-h {
+    font-size: 24px;
+    padding: 15px;
+  }
+  .sub-h {
+    font-size: 18px;
+  }
+  .center-content {
+    font-size: 24px;
+    span {
+      font-size: 18px;
+    }
+    button.btn-primary-clr{
+      opacity: 1 !important;
+    }
+  }
+  .margin-md {
+    margin-bottom: 0 !important;
+  }
+  .extra-padd-xs {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .card-container {
+    width: 100%;
+    .mini-card {
+      margin: 35px auto;
+      width: 100%;
+      max-width: 200px;
+      float: none;
+    }
+  }
+  .card-container2 {
+    width: 100% !important;
+    .mini-card {
+      margin: 35px auto;
+      width: 100%;
+      max-width: 200px;
+      float: none;
+    }
+  }
+  section.solid-color {
+    padding: 20px;
+    h1 {
+      font-size: 24px;
+    }
+  }
+  .margin-md-bottom {
+    margin-bottom: 0 !important;
+  }
+  .card-2 {
+    width: 100%;
+    height: 100%;
+    p {
+      padding: 0 !important;
+      padding-top: 15px !important;
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+    }
+    p.phone {
+      margin-bottom: 30px;
+    }
+  }
+  .side-bar {
+    min-width: 100%;
+    p {
+      font-size: 14px;
+      line-height: 2.00;
+    }
+  }
 }

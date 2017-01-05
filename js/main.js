@@ -3,6 +3,19 @@
 $(document).ready(function() {
 
 
+//smooth scroll
+$('a[href*="#"]:not([href="#"])').not(".carousel-control").click(function() {
+  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top - 70
+      }, 1000);
+      return false;
+    }
+  }
+});
 
 //plus minus controls
 $('.btn-number').click(function(e){
@@ -36,6 +49,8 @@ $('.btn-number').click(function(e){
         input.val(0);
     }
 });
+
+
 $('.input-number').focusin(function(){
    $(this).data('oldValue', $(this).val());
 });
@@ -82,7 +97,7 @@ $(".input-number").keydown(function (e) {
 
   //navbar control
   $(window).scroll(function(){
-      if ($(this).scrollTop() > 540) {
+      if ($(this).scrollTop() > 200) {
           $('#menu-scroll-show').fadeIn(100);
       } else {
           $('#menu-scroll-show').fadeOut(100);
