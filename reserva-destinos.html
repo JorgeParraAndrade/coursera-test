@@ -95,9 +95,13 @@
           <input type="text" class="form-control" placeholder="Nombre y Apellido *">
           <input type="text" class="form-control" placeholder="Correo Electrónico *">
           <select name="destino" id="destino" class="form-control">
-            <option value="venezuela">Varenezuela</option>
-            <option value="argentina">Argentina</option>
-            <option value="colombia">Colombia</option>
+            <option value="null" hidden>Selecciona una Promoción</option>
+            <option value="roques">Los Roques</option>
+            <option value="tortuga">La Tortuga</option>
+            <option value="roraima">Roraima</option>
+            <option value="salto-angel">Salto Angel</option>
+            <option value="catatumbo">Catatumbo</option>
+            <option value="autana">Tepuy Autana</option>
           </select>
           <input type="text" class="form-control calback" placeholder="Check in" id="date">
 
@@ -137,19 +141,33 @@
 <section class="gray-sec pre-footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-4 side-bar barra">
+      <div class="col-xs-12 col-sm-4 barra">
         <h3>PIERA TOURS</h3>
         <span>¿Quiénes somos?</span>
         <p>Somos una Tour Operadora moderna radicada en Venezuela, con representación en Cuba, Curaçao y Aruba, con características vanguardistas para desarrollar toda la capacidad de conocer los gustos de los usuarios y así lograr satisfacerlos, maximizando las potencialidades de los productos y servicios turísticos que ofrecemos.</p>
       </div>
-      <div class="col-sm-4 side-bar" style="margin-left: 50px; width: 670px;">
+      <div class="col-xs-12 col-sm-8 side-bar">
         <h3>NUESTROS ALIADOS</h3>
 
-        <div class="img-container">
+        <div class="img-container hidden-xs hidden-sm">
           <a href="#"><img src="img/spon1.jpg" alt="aliados"></a>
           <a href="#"><img src="img/spon2.jpg" alt="aliados"></a>
           <a href="#"><img src="img/spon3.jpg" alt="aliados"></a>
           <a href="#"><img src="img/spon4.jpg" alt="aliados"></a>
+        </div>
+        <div class="img-container visible-xs visible-sm">
+          <div class="col-xs-12">
+            <a href="#"><img src="img/spon1.jpg" alt="aliados"></a>
+          </div>
+          <div class="col-xs-12">
+            <a href="#"><img src="img/spon2.jpg" alt="aliados"></a>
+          </div>
+          <div class="col-xs-12">
+            <a href="#"><img src="img/spon3.jpg" alt="aliados"></a>
+          </div>
+          <div class="col-xs-12">
+            <a href="#"><img src="img/spon4.jpg" alt="aliados"></a>
+          </div>
         </div>
 
 
@@ -189,8 +207,17 @@
 <script src="js/main.js"></script>
 
 <script type="text/javascript">
+
 $.datepicker.setDefaults($.datepicker.regional['es']);
   $(document).ready(function(){
+
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    var val = sURLVariables[0].split('=')[1];
+    if (val!="") {
+      $('#destino').val(val);
+    }
+
     $( "#date" ).datepicker({
       numberOfMonths: [ 1, 2 ],
       minDate: 0,
