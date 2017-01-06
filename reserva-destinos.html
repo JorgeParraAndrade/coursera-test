@@ -9,6 +9,7 @@
   <!-- Style sheets -->
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Fonts -->
@@ -98,7 +99,7 @@
             <option value="argentina">Argentina</option>
             <option value="colombia">Colombia</option>
           </select>
-          <input type="date" class="form-control" placeholder="Check in">
+          <input type="text" class="form-control calback" placeholder="Check in" id="date">
 
           <div style="margin: 0 auto;">
 
@@ -182,6 +183,23 @@
 
 </body>
 <script src="js/jquery.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery-ui-es.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+
+<script type="text/javascript">
+$.datepicker.setDefaults($.datepicker.regional['es']);
+  $(document).ready(function(){
+    $( "#date" ).datepicker({
+      numberOfMonths: [ 1, 2 ],
+      minDate: 0,
+    });
+
+    $('#destino').selectmenu({
+
+    });
+  });
+</script>
+
 </html>

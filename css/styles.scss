@@ -180,6 +180,16 @@ body{
     color: $rosa;
     border: solid 2px $rosa;
   }
+  &:active{
+    color: #fa145f;
+    background-color: rgba(40, 96, 144, 0);
+    border-color: #fa145f;
+  }
+  &:focus{
+    color: #fa145f;
+    background-color: rgba(40, 96, 144, 0);
+    border-color: #fa145f;
+  }
 }
 
 .btn-secondary{
@@ -216,6 +226,101 @@ a.navbar-brand {
 
 
 // New SASS
+
+
+
+//jquery ui
+.ui-datepicker{
+  z-index: 2 !important;
+  margin-top: 15px;
+  &:after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-top: 0 solid transparent;
+    border-bottom: 14px solid rgb(255, 255, 255);
+    border-right: 10px solid rgba(0, 0, 0, 0);
+    border-left: solid rgba(0, 0, 0, 0) 10px;
+    left: 15px;
+    top: -14px;
+  }
+}
+.ui-widget.ui-widget-content {
+    font-family: inherit;
+    border: 2px solid #ebebeb;
+    border-radius: 0;
+    background-color: #ffffff;
+    color: #454545;
+}
+.ui-widget-header {
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    color: #454545;
+    font-weight: bold;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    font-weight: normal;
+    color: #454545;
+    text-align: center;
+}
+
+.ui-state-default{
+  &:hover{
+    background: #fa145f;
+    color: #ffffff;
+  }
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: 1px solid #ffffff;
+    background: #bfbfbf;
+    color: #454545;
+}
+
+.ui-datepicker-prev span {
+    background-image: url(../img/l-arrow.png) !important;
+        background-position: 0px 0px !important;
+}
+
+.ui-datepicker-next span {
+    background-image: url(../img/r-arrow.png) !important;
+        background-position: 0px 0px !important;
+}
+
+.calback{
+  background-image: url(../img/cal-ico.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 10px;
+  padding-left: 40px;
+}
+
+.ui-selectmenu-icon {
+    background-image: url(../img/chev-down.png) !important;
+    background-position: -1px 6px;
+}
+.ui-selectmenu-button{
+  height: 40px;
+  padding: 7px 15px;
+  width: 100% !important;
+  max-width: 470px;
+  border: 2px solid #ebebeb;
+  border-radius: 0;
+  font-family: inherit;
+  color: #999999;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.ui-selectmenu-button.ui-button:hover {
+    border: 2px solid #ebebeb;
+    background: white;
+    color: #7a7a7a;
+}
+
 
 #main-menu{
   margin: 1.3rem 0;

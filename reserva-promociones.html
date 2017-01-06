@@ -9,6 +9,7 @@
   <!-- Style sheets -->
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Fonts -->
@@ -104,12 +105,12 @@
           <div class="container-fluid" style="padding-top: 0;padding-right: 0;padding: 28px;">
             <div class="col-xs-12 col-md-6">
               <div class="container-fluid">
-                <input type="date" class="form-control" placeholder="Check in">
+                <input type="text" class="form-control calback" placeholder="Check in" id="date">
               </div>
             </div>
             <div class="col-xs-12 col-md-6">
               <div class="container-fluid">
-                <input type="date" class="form-control" placeholder="Check out">
+                <input type="text" class="form-control calback" placeholder="Check out" id="date2">
               </div>
             </div>
           </div>
@@ -197,5 +198,21 @@
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery-ui-es.js"></script>
 <script src="js/main.js"></script>
 </html>
+
+<script type="text/javascript">
+$.datepicker.setDefaults($.datepicker.regional['es']);
+  $(document).ready(function(){
+    $( "#date,#date2" ).datepicker({
+      numberOfMonths: [ 1, 2 ],
+      minDate: 0,
+    });
+
+    $('#destino').selectmenu({
+
+    });
+  });
+</script>
