@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width; initial-scale = 1.0; maximum-scale=1.0; user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -16,75 +17,64 @@
 
   <title>Piera Tours</title>
 </head>
-<body>
+<body style="margin-top:70px">
 
 
 
-  <!-- Main menu -->
-  <nav class="navbar navbar-default navbar-main" style="margin-bottom: 0;">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="brand-img img-responsive" alt=""></a>
+  <!-- all menu -->
+    <div class="container-menu-mobile" style="display:none;">
+      <div class="container-menu-mobile-opciones-vertical">
+        <ul class="container-menu-mobile-list">
+          MENÚ<span class="menutoggle close-btn-collapse"><img src="img/close-mb.png" alt="close"></span>
+          <li class="container-menu-mobile-list-item" style="margin-top: 100px;"><a href="index.html#destinos">Destinos</a></li>
+          <li class="container-menu-mobile-list-item"><a href="index.html#promociones">Promociones</a></li>
+          <li class="container-menu-mobile-list-item"><a href="index.html#servicios">Servicios</a></li>
+          <li class="container-menu-mobile-list-item"><a href="index.html#contacto">Contacto</a></li>
+        </ul>
       </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="main-menu">
-        <ul class="nav navbar-nav nav-links">
-          <li><a href="index.html#destinos">Destinos</a></li>
-          <li><a href="index.html#promociones">Promociones</a></li>
-          <li><a href="index.html#servicios">Servicios</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
+      <div class="container-menu-mobile-opciones-horizontal">
+        <ul class="container-menu-mobile-list-2">
+          <li class="container-menu-mobile-list-item-2"><a href="https://www.facebook.com/pieratours" target="_blank"><img src="img/face-g.png" alt=""></a></li>
+          <li class="container-menu-mobile-list-item-2"><a href="https://twitter.com/pieratours" target="_blank"><img src="img/twitter-g.png" alt=""></a></li>
+          <li class="container-menu-mobile-list-item-2"><a href="https://www.instagram.com/pieratours/" target="_blank"><img src="img/insta-g.png" alt=""></a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://www.facebook.com/pieratours" target="_blank"><img src="img/face-g.png" alt=""></a></li>
-          <li><a href="https://twitter.com/pieratours" target="_blank"><img src="img/twitter-g.png" alt=""></a></li>
-          <li><a href="https://www.instagram.com/pieratours/" target="_blank"><img src="img/insta-g.png" alt=""></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-  <!-- Main menu scroll -->
-  <nav class="navbar navbar-default navbar-main navbar-fixed-top" id="menu-scroll-show" style="display:none;">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="brand-img img-responsive" alt=""></a>
       </div>
+    </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="main-menu">
-        <ul class="nav navbar-nav nav-links">
-          <li><a href="index.html#destinos">Destinos</a></li>
-          <li><a href="index.html#promociones">Promociones</a></li>
-          <li><a href="index.html#servicios">Servicios</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" style="margin-right: 1px;">
-          <li><a href="https://www.facebook.com/pieratours" target="_blank"><img src="img/face-g.png" alt=""></a></li>
-          <li><a href="https://twitter.com/pieratours" target="_blank"><img src="img/twitter-g.png" alt=""></a></li>
-          <li><a href="https://www.instagram.com/pieratours/" target="_blank"><img src="img/insta-g.png" alt=""></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+    <!-- Main menu scroll -->
+    <nav class="navbar navbar-default navbar-main navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed menutoggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="brand-img img-responsive" alt=""></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="nav navbar-nav nav-links">
+            <li><a href="index.html#destinos">Destinos</a></li>
+            <li><a href="index.html#promociones">Promociones</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" style="margin-right: 1px;">
+            <li><a href="https://www.facebook.com/pieratours" target="_blank"><img src="img/face-g.png" alt=""></a></li>
+            <li><a href="https://twitter.com/pieratours" target="_blank"><img src="img/twitter-g.png" alt=""></a></li>
+            <li><a href="https://www.instagram.com/pieratours/" target="_blank"><img src="img/insta-g.png" alt=""></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
 
 <div class="container-fluid">
-  <div class="header-section home-grid" style="background-image: url(img/roraimaheader.jpg);">
+  <div class="header-section home-grid-no-zoom" style="background-image: url(img/roraimaheader.jpg);">
     <div class="container d-header">
       <h3>¡NO TE LO PUEDES PERDER!</h3>
       <p>Planifica ya las vacaciones de tu vida con la ayuda <br>de Piera Tours, con todo incluido.</p>
@@ -98,7 +88,7 @@
 <div class="container">
   <div class="row margin-md-top margin-md">
 
-    <div class="col-sm-6">
+    <div class="col-xs-12 col-md-6">
       <h1 class="main-h" style="text-align: left;">Te llevamos al tepuy roraima</h1>
       <h3 class="sub-h" style="text-align: left;">Conoce sus maravillas</h3>
       <p>
@@ -115,7 +105,7 @@
         Los reportes de expediciones de la época victoriana sobre esta montaña, inspiraron a Arthur Conan Doyle para escribir en 1912 su clásica novela de aventuras ‘El mundo perdido’, de la cual se han realizado varias versiones cinematográficas. El origen de la palabra Roraima no está bien definido.
       </p>
     </div>
-    <div class="col-sm-6">
+    <div class="col-xs-12 col-md-6">
       <img class="img-responsive" src="img/roraima1.jpg" alt="destino">
     </div>
 
@@ -128,11 +118,11 @@
       <div class="row margin-md-top margin-md">
 
 
-        <div class="col-sm-6">
+        <div class="col-xs-12 col-md-6">
           <img class="img-responsive" src="img/roraima2.jpg" alt="destino">
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-xs-12 col-md-6">
           <h1 class="main-h" style="text-align: left;">INFORMACIÓN ACERCA DEL TOUR</h1>
           <!-- <h3 class="sub-h" style="font-size: 30px;color: #3dbeeb;text-align: left;">Lorem ipsum dolor sit amet</h3> -->
           <div class="continer-fluid">
@@ -239,7 +229,7 @@
 <div class="container">
   <div class="row margin-md-top margin-md">
 
-    <div class="col-sm-6">
+    <div class="col-xs-12 col-md-6">
       <h1 class="main-h" style="text-align: left;">NORMAS Y RECOMENDACIONES</h1>
       <h3 class="sub-h" style="text-align: left;">Todo lo que debes saber antes de viajar</h3>
       <div class="container-fluid">
@@ -334,7 +324,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-xs-12 col-md-6">
       <img class="img-responsive" src="img/roraima3.jpg" alt="destino">
     </div>
   </div>
@@ -481,36 +471,36 @@
 <section class="gray-sec pre-footer">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-4 barra">
-        <h3>PIERA TOURS</h3>
-        <span>¿Quiénes somos?</span>
-        <p>Somos una Tour Operadora moderna radicada en Venezuela, con representación en Cuba, Curaçao y Aruba, con características vanguardistas para desarrollar toda la capacidad de conocer los gustos de los usuarios y así lograr satisfacerlos, maximizando las potencialidades de los productos y servicios turísticos que ofrecemos.</p>
-      </div>
-      <div class="col-xs-12 col-sm-8 side-bar">
-        <h3>NUESTROS ALIADOS</h3>
-
-        <div class="img-container hidden-xs hidden-sm">
-          <a href="#"><img src="img/spon1.jpg" alt="aliados"></a>
-          <a href="#"><img src="img/spon2.jpg" alt="aliados"></a>
-          <a href="#"><img src="img/spon3.jpg" alt="aliados"></a>
-          <a href="#"><img src="img/spon4.jpg" alt="aliados"></a>
+      <div class="col-xs-12 col-md-4 barra">
+        <div class="container-fluid container-center-info">
+          <h3>PIERA TOURS</h3>
+          <span>¿Quiénes somos?</span>
+          <p>Somos una Tour Operadora moderna radicada en Venezuela, con representación en Cuba, Curaçao y Aruba, con características vanguardistas para desarrollar toda la capacidad de conocer los gustos de los usuarios y así lograr satisfacerlos, maximizando las potencialidades de los productos y servicios turísticos que ofrecemos.</p>
         </div>
-        <div class="img-container visible-xs visible-sm">
-          <div class="col-xs-12">
+      </div>
+      <div class="col-xs-12 col-md-8 side-bar">
+        <div class="container-fluid container-center-info">
+          <h3>NUESTROS ALIADOS</h3>
+          <div class="img-container hidden-xs hidden-sm">
             <a href="#"><img src="img/spon1.jpg" alt="aliados"></a>
-          </div>
-          <div class="col-xs-12">
             <a href="#"><img src="img/spon2.jpg" alt="aliados"></a>
-          </div>
-          <div class="col-xs-12">
             <a href="#"><img src="img/spon3.jpg" alt="aliados"></a>
-          </div>
-          <div class="col-xs-12">
             <a href="#"><img src="img/spon4.jpg" alt="aliados"></a>
           </div>
-        </div>
-
-
+          <div class="img-container visible-xs visible-sm">
+            <div class="col-xs-12">
+              <a href="#"><img src="img/spon1.jpg" alt="aliados"></a>
+            </div>
+            <div class="col-xs-12">
+              <a href="#"><img src="img/spon2.jpg" alt="aliados"></a>
+            </div>
+            <div class="col-xs-12">
+              <a href="#"><img src="img/spon3.jpg" alt="aliados"></a>
+            </div>
+            <div class="col-xs-12">
+              <a href="#"><img src="img/spon4.jpg" alt="aliados"></a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -520,17 +510,17 @@
 <section id="footer" class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-sm-3">
-        <img src="img/logo-w.png" class="img-responsive" alt="">
+      <div class="col-xs-12 col-sm-3">
+        <img src="img/logo-w.png" class="img-responsive logo-footer" alt="">
       </div>
-      <div class="col-sm-9">
+      <div class="col-xs-12 col-sm-9">
         <div class="info">
           <p><img src="img/mail-g.png" alt=""> <a href="mailto:info@pieratours.com">info@pieratours.com</a> &nbsp; <img src="img/phone-g2.png" alt=""> <a href="tel:+582127627872">+58 212 762 7872</a></p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12 copyright">
+      <div class="col-xs-12 copyright">
         <span>Copyright 2016 © Piera Tours c.a. | RIF J-405562617</span>
       </div>
     </div>

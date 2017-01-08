@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="favicon.png">
 
@@ -17,89 +18,78 @@
 
   <title>Piera Tours</title>
 </head>
-<body>
+<body style="margin-top:70px;">
 
 
 
-  <!-- Main menu -->
-  <nav class="navbar navbar-default navbar-main" style="margin-bottom: 0;">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="brand-img img-responsive" alt=""></a>
+  <!-- all menu -->
+    <div class="container-menu-mobile" style="display:none;">
+      <div class="container-menu-mobile-opciones-vertical">
+        <ul class="container-menu-mobile-list">
+          MENÚ<span class="menutoggle close-btn-collapse"><img src="img/close-mb.png" alt="close"></span>
+          <li class="container-menu-mobile-list-item" style="margin-top: 100px;"><a href="index.html#destinos">Destinos</a></li>
+          <li class="container-menu-mobile-list-item"><a href="index.html#promociones">Promociones</a></li>
+          <li class="container-menu-mobile-list-item"><a href="index.html#servicios">Servicios</a></li>
+          <li class="container-menu-mobile-list-item"><a href="index.html#contacto">Contacto</a></li>
+        </ul>
       </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="main-menu">
-        <ul class="nav navbar-nav nav-links">
-          <li><a href="index.html#destinos">Destinos</a></li>
-          <li><a href="index.html#promociones">Promociones</a></li>
-          <li><a href="index.html#servicios">Servicios</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
+      <div class="container-menu-mobile-opciones-horizontal">
+        <ul class="container-menu-mobile-list-2">
+          <li class="container-menu-mobile-list-item-2"><a href="https://www.facebook.com/pieratours" target="_blank"><img src="img/face-g.png" alt=""></a></li>
+          <li class="container-menu-mobile-list-item-2"><a href="https://twitter.com/pieratours" target="_blank"><img src="img/twitter-g.png" alt=""></a></li>
+          <li class="container-menu-mobile-list-item-2"><a href="https://www.instagram.com/pieratours/" target="_blank"><img src="img/insta-g.png" alt=""></a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://www.facebook.com/pieratours" target="_blank"><img src="img/face-g.png" alt=""></a></li>
-          <li><a href="https://twitter.com/pieratours" target="_blank"><img src="img/twitter-g.png" alt=""></a></li>
-          <li><a href="https://www.instagram.com/pieratours/" target="_blank"><img src="img/insta-g.png" alt=""></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-  <!-- Main menu scroll -->
-  <nav class="navbar navbar-default navbar-main navbar-fixed-top" id="menu-scroll-show" style="display:none;">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="brand-img img-responsive" alt=""></a>
       </div>
+    </div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="main-menu">
-        <ul class="nav navbar-nav nav-links">
-          <li><a href="index.html#destinos">Destinos</a></li>
-          <li><a href="index.html#promociones">Promociones</a></li>
-          <li><a href="index.html#servicios">Servicios</a></li>
-          <li><a href="index.html#contacto">Contacto</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" style="margin-right: 1px;">
-          <li><a href="https://www.facebook.com/pieratours" target="_blank"><img src="img/face-g.png" alt=""></a></li>
-          <li><a href="https://twitter.com/pieratours" target="_blank"><img src="img/twitter-g.png" alt=""></a></li>
-          <li><a href="https://www.instagram.com/pieratours/" target="_blank"><img src="img/insta-g.png" alt=""></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+    <!-- Main menu scroll -->
+    <nav class="navbar navbar-default navbar-main navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed menutoggle">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png" class="brand-img img-responsive" alt=""></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main-menu">
+          <ul class="nav navbar-nav nav-links">
+            <li><a href="index.html#destinos">Destinos</a></li>
+            <li><a href="index.html#promociones">Promociones</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" style="margin-right: 1px;">
+            <li><a href="https://www.facebook.com/pieratours" target="_blank"><img src="img/face-g.png" alt=""></a></li>
+            <li><a href="https://twitter.com/pieratours" target="_blank"><img src="img/twitter-g.png" alt=""></a></li>
+            <li><a href="https://www.instagram.com/pieratours/" target="_blank"><img src="img/insta-g.png" alt=""></a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
 
 <section class="solid-color" style="background-image:url('img/bigback.jpg')">
 
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 contacto">
+      <div class="col-sm-5 contacto">
         <h1>CONTÁCTANOS</h1>
         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, culpa.</p> -->
         <form>
-          <input type="text" class="form-control">
-          <input type="text" class="form-control">
-          <textarea name="mensaje" rows="8" cols="80" class="form-control"></textarea>
-          <div class="btn btn-primary pull-left" style="margin-top: 20px;margin-left: 40px;">ENVIAR</div>
+          <input type="text" class="form-control" placeholder="Nombres*" id="nombres" style="margin: 30px 0;">
+          <input type="email" class="form-control mailfield" id="mail" placeholder="Correo Electrónico*" style="margin: 30px 0;">
+          <textarea id="mensaje" name="mensaje" rows="8" cols="80" class="form-control" placeholder="Mensaje" style="margin: 30px 0;"></textarea>
+          <div class="btn btn-primary pull-left" style="margin: 30px 0;" onclick="functionVal();">ENVIAR</div>
         </form>
       </div>
 
-      <div class="col-sm-6">
+      <div class="col-sm-7">
 
         <h1>NUESTRAS OFICINAS COMERCIALES</h1>
         <div class="col-sm-6">
@@ -216,10 +206,18 @@
 </div>
 
 </body>
+<script type="text/javascript" src="https://mandrillapp.com/api/docs/js/mandrill.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
+
+
+<script type="text/javascript">
+
+
+
+</script>
 
 
 </html>

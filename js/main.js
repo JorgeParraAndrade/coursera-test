@@ -1,7 +1,157 @@
 
+function sendMail() {
+  nombres = $('#nombres').val();
+  mail = $('#mail').val();
+  destino = $('#destino').val();
+  date = $('#date').val();
+  date2 = $('#date2').val();
+  adultos = $('#adultos').val();
+  ninos = $('#ninos').val();
+
+  mandrill_client = new mandrill.Mandrill('3Tc861aMBCeJTh2_U-znVA');
+  var params = {
+    "message": {
+      "html": "<p>Example HTML content</p>",
+      "text": "1",
+      "subject": "2",
+      "from_email": "3",
+      "from_name": "4",
+      "to": [{
+        "email": "jorgeparraandrade@gmail.com",
+        "name": "Jorge Parra",
+        "type": "to"
+      }],
+      "headers": {
+        "Reply-To": "message.reply@example.com",
+      },
+      "important": false,
+      "track_opens": null,
+      "track_clicks": null,
+      "auto_text": null,
+      "auto_html": null,
+      "inline_css": null,
+      "url_strip_qs": null,
+      "preserve_recipients": null,
+      "view_content_link": null,
+      "bcc_address": "",
+      "tracking_domain": null,
+      "signing_domain": null,
+      "return_path_domain": null,
+      "merge": true,
+      "merge_language": "mailchimp",
+    },
+    "async": false
+  };
+  var async = false;
+
+  //date
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if(dd<10) {
+      dd='0'+dd
+  }
+
+  if(mm<10) {
+      mm='0'+mm
+  }
+
+  today = mm+'/'+dd+'/'+yyyy;
+
+  var send_at = today;
+
+  mandrill_client.messages.send({"message": params, "async": async, "send_at": send_at}, function(result) {
+      console.log(result);
+      /*
+      [{
+              "email": "recipient.email@example.com",
+              "status": "sent",
+              "reject_reason": "hard-bounce",
+              "_id": "abc123abc123abc123abc123abc123"
+          }]
+      */
+  }, function(e) {
+      // Mandrill returns the error as an object with name and message keys
+      console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
+      // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
+  });
+}
+
+
+
+function functionVal(){
+  var bandera = 0;
+
+  $("input").each(function(index, el) {
+    if (el.value=="") {
+      $(this).addClass('error-box');
+      el.focus();
+      return false;
+    }else {
+      bandera++;
+      return true;
+    }
+  });
+
+  if (bandera!=0) {
+    sendMail();
+  }
+
+}
+
+var sPageURL = window.location.search.substring(1);
+var sURLVariables = sPageURL.split('&');
+var val = sURLVariables[0].split('=')[1];
+
 
 $(document).ready(function() {
 
+
+  $( "#date,#date2" ).datepicker({
+    numberOfMonths: [ 1, 2 ],
+    minDate: 0,
+  });
+
+  $('#destino').selectmenu();
+
+  if(val=="" || val==undefined){
+  }else{
+    $('#destino').val(val);
+    $('#destino').selectmenu('refresh');
+  }
+
+
+  $('.menutoggle').click(function(e) {
+    $('.container-menu-mobile').animate({width: 'toggle'});
+  });
+
+
+  function isValidEmailAddress(emailAddress) {
+    var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
+    return pattern.test(emailAddress);
+  };
+
+  $("input").not("input.mailfield").on("keyup change", function() {
+     if (this.value=="") {
+       $(this).addClass('error-box');
+       $(this).focus();
+       return false;
+     }else{
+       $(this).removeClass('error-box');
+     };
+  });
+
+  $("input.mailfield").on("keyup change", function() {
+     if (this.value=="" || !isValidEmailAddress(this.value)) {
+       $(this).addClass('error-box');
+       $(this).focus();
+       return false;
+     }else{
+       $(this).removeClass('error-box');
+     };
+  });
 
 //smooth scroll
 $('a[href*="#"]:not([href="#"])').not(".carousel-control,.no-smooth").click(function() {
